@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    State by State
+{% endblock %}
+
+{% block main %}
+
+<h2> {{ title }} </h2><br>
+
+<table class="table table-striped">
+
+    {% for header in headers %}
+
+            <th> {{ header }} </th>
+
+    {% endfor %}
+
+    {% for entry in state_stats %}
+
+        <tr>
+            {% for key, value in entry.items() %}
+            <td> {{ value }} </td>
+            {% endfor %}
+        </tr>
+
+    {% endfor %}
+
+</table>
+
+<form action="/state" method="post">
+    <label for="states">Choose a state:</label>
+    <select id="state" name="state">
+        <option value="Arizona">Arizona</option>
+        <option value="Colorado">Colorado</option>
+        <option value="Florida">Florida</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Iowa">Iowa</option>
+        <option value="Maine (statewide)">Maine (statewide)</option>
+        <option value="Maine 2nd District">Maine 2nd District</option>
+        <option value="Michigan">Michigan</option>
+        <option value="Minnesota">Minnesota</option>
+        <option value="Nebraska 2nd District">Nebraska 2nd District</option>
+        <option value="Nevada">Nevada</option>
+        <option value="New Hampshire">New Hampshire</option>
+        <option value="New Mexico">New Mexico</option>
+        <option value="North Carolina">North Carolina</option>
+        <option value="Ohio">Ohio</option>
+        <option value="Pennsylvania">Pennsylvania</option>
+        <option value="Texas">Texas</option>
+        <option value="Virginia">Virginia</option>
+        <option value="Wisconsin">Wisconsin</option>
+    </select>
+    <input type="submit">
+</form>
+{% endblock %}

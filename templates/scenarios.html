@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Scenarios
+{% endblock %}
+
+{% block main %}
+<h2>Scenarios</h2><br>
+<table class="table table-striped">
+    {% for header in headers %}
+    <th> {{ header }} </th>
+    {% endfor %}
+
+    {% for entry in scenarios %}
+
+        <tr>
+            {% for key, value in entry.items() %}
+            <td> {{ value }} </td>
+            {% endfor %}
+        </tr>
+
+    {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,66 @@
+Predictit vs. fivethirtyeight
+
+My idea is to make a website that compares predictions for the upcoming 2020 US election between betting site Predictit and polling aggregate site Fivethirtyeight.com
+
+I will analyze fivethirtyeight's data and use it to analyze some of predictit's election markets such as
+
+"Electoral College Margin of Victory" - 6653
+
+2020 presidential election winner*
+
+Trump win popular vote in 2020? - 5554
+
+Popular Vote Majority for president? - 6833
+
+Winner of popular vote wins Electoral College? - 6642
+
+Tipping Point Jurisdiction
+
+Which party wins the presidency?
+
+Trump wins any state he lost in 2016?
+
+Trump loses any state he won in 2016?
+
+State results
+
+I'll compare the predictions from each website and provide a list of "Best Bets" where 538.com indicates that Predictit is most overvaluing or undervaluing
+particular outcomes
+
+Users can also click on a menu to see an overall comparison for the chosen Predictit categories
+
+
+
+Electoral MOV Process:
+
+Get contracts from PI (6653) with pidl
+
+Append the probabilities for each result to a list of dictionaries
+
+    keys for each dictionary: "range" "pi_prob"
+
+Open ev_probabilities.csv
+
+calculate the sum of probabilities for each range (taking evprob_inc or evprob_chal as appropriate)
+
+append each result to the list of dictionaries, adding a new key "fte_prob"
+
+print dictionary
+
+
+STATES
+
+Make a csv with columns: "state" "code" with PredictIt code for each state contest.
+
+Make a "state.html" template to display stats for each state (based on index.html)
+
+Make a States menu where the user can choose from a list of states
+
+    Sends state to a function - finds state code in csv
+                                appends it to the predictit html and checks the API
+                                Checks 538 csv for state stats
+
+                                return prep([{"Market": market, "Pick": "Biden", "PredictIt Price": pi_bidenwins, "538.com Probability": fte_bidenwins},
+                                        {"Market": market, "Pick": "Trump", "PredictIt Price": pi_trumpwins, "538.com Probability": fte_trumpwins}])
+
+

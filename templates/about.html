@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    About the Site
+{% endblock %}
+
+{% block main %}
+
+<h2>About the Site</h2><br>
+
+<div>
+
+<h4>What is this?</h4>
+<p>
+
+This project compiles and analyzes data from two popular US election prediction websites: <a href="http://predictit.org">Predictit.org</a> and <a href="https://projects.fivethirtyeight.com/2020-election-forecast/">Fivethirtyeight.com.</a><br><br>
+
+These two websites make predictions about elections using different methods:<br>
+
+    Predictit is a betting website where users can make wagers about many different outcomes and scenarios in politics.<br>
+
+    Fivethirtyeight uses statistical models of polls to make election predictions.<br><br> </p>
+
+<h4>Why did you make this?</h4>
+
+<p>I was interested in comparing the results of these two websites and providing analysis to anyone else who was interested on the internet.<br><br></p>
+
+<h4>How did you make this?</h4>
+
+<p>I used a programming language called Python to access and analyze the data from the two sites.<br><br></p>
+
+<h4>How often do the numbers update?</h4>
+
+<p>
+
+Fivethirtyeight updates its data once a day.<br>
+
+PredictIt data is constantly updated.<br><br>
+
+</p>
+
+<h4>What info can I get from this site?</h4>
+
+<p>
+
+Users can see the PredictIt markets with current PredictIt price, Fivethirtyeight Probability, the difference between the Predictit and Fivethirtyeight prediction, and a "Recommendation."<br>
+
+    The Recommendation says "buy YES" if the Difference is 8 or more; "buy NO" if the Difference is -8 or less.<br><br>
+
+
+
+There is a BEST BETS menu that compiles all the "buy YES" and "buy NO" markets.<br><br>
+
+</p>
+
+<h4>What is the purpose of all this?</h4>
+
+<p>
+
+As someone who checks both of these websites quite often, I am interested in the results based on "gut feeling" vs. statistical analysis, and I hope that the project gives some insight into this.<br>
+
+    I don't actually make bets on PredictIt, and the intention is not to influence markets or offer real betting advice.<br>
+
+    The "Recommendations" are for educational purposes and to give an easy way to interpret the results. How much credence you give these results is entirely up to you.<br>
+
+    I didn’t make this with any political agenda. My goal was to learn more about these predictive approaches and provide information to people who enjoy this kind of thing.<br>
+
+</p>
+
+</div>
+{% endblock %}

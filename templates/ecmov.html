@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Electoral College Margin of Victory
+{% endblock %}
+
+{% block main %}
+<h2>What will the Electoral College Margin of Victory Be?</h2><br>
+<table class="table table-sm table-striped">
+    {% for header in headers %}
+    <th> {{ header }} </th>
+    {% endfor %}
+
+    {% for entry in stats %}
+
+        <tr>
+            {% for key, value in entry.items() %}
+            <td> {{ value }} </td>
+            {% endfor %}
+        </tr>
+
+    {% endfor %}
+</table>
+{% endblock %}
